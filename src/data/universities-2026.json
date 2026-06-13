@@ -27,7 +27,7 @@
         "records": 101
       }
     },
-    "unionRecords": 214
+    "unionRecords": 213
   },
   "universities": [
     {
@@ -911,6 +911,7 @@
       "name": "University of California, San Francisco",
       "aliases": [],
       "country": "United States",
+      "city": "San Francisco",
       "ranks": {
         "ARWU": "21"
       },
@@ -948,21 +949,25 @@
       "name": "EPFL",
       "aliases": [
         "EPFL – École polytechnique fédérale de Lausanne",
-        "École Polytechnique Fédérale de Lausanne"
+        "École Polytechnique Fédérale de Lausanne",
+        "Swiss Federal Institute of Technology Lausanne"
       ],
       "country": "Switzerland",
       "city": "Lausanne",
       "ranks": {
         "QS": "=22",
-        "THE": "35"
+        "THE": "35",
+        "ARWU": "44"
       },
       "sourceUrls": {
         "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/epfl-ecole-polytechnique-federale-de-lausanne",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/ecole-polytechnique-federale-de-lausanne"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/ecole-polytechnique-federale-de-lausanne",
+        "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
     {
@@ -1221,6 +1226,7 @@
       "name": "Rockefeller University",
       "aliases": [],
       "country": "United States",
+      "city": "New York City",
       "ranks": {
         "ARWU": "29"
       },
@@ -1468,6 +1474,7 @@
         "University of Munich"
       ],
       "country": "Germany",
+      "city": "Munich",
       "ranks": {
         "THE": "34",
         "ARWU": "42"
@@ -1486,6 +1493,7 @@
       "name": "University of Copenhagen",
       "aliases": [],
       "country": "Denmark",
+      "city": "Copenhagen",
       "ranks": {
         "THE": "90",
         "ARWU": "35"
@@ -1694,6 +1702,7 @@
       "name": "University of Science and Technology of China",
       "aliases": [],
       "country": "China",
+      "city": "Hefei",
       "ranks": {
         "THE": "51",
         "ARWU": "40"
@@ -1845,21 +1854,6 @@
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/sorbonne-university",
         "THE": "https://www.timeshighereducation.com/world-university-rankings/sorbonne-university",
-        "ARWU": "https://www.shanghairanking.com/institution/"
-      }
-    },
-    {
-      "id": "swiss-federal-institute-of-technology-lausanne",
-      "name": "Swiss Federal Institute of Technology Lausanne",
-      "aliases": [],
-      "country": "Switzerland",
-      "ranks": {
-        "ARWU": "44"
-      },
-      "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
-      },
-      "profileUrls": {
         "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
@@ -2054,6 +2048,7 @@
       "name": "Karolinska Institute",
       "aliases": [],
       "country": "Sweden",
+      "city": "Solna",
       "ranks": {
         "THE": "=53",
         "ARWU": "50"
@@ -2284,6 +2279,7 @@
       "name": "Utrecht University",
       "aliases": [],
       "country": "Netherlands",
+      "city": "Utrecht",
       "ranks": {
         "ARWU": "56"
       },
@@ -2361,6 +2357,7 @@
       "name": "University of Geneva",
       "aliases": [],
       "country": "Switzerland",
+      "city": "Geneva",
       "ranks": {
         "ARWU": "58"
       },
@@ -2376,6 +2373,7 @@
       "name": "University of Texas Southwestern Medical Center",
       "aliases": [],
       "country": "United States",
+      "city": "Dallas",
       "ranks": {
         "ARWU": "58"
       },
@@ -2455,6 +2453,7 @@
       "name": "Université Paris Cité",
       "aliases": [],
       "country": "France",
+      "city": "Paris",
       "ranks": {
         "ARWU": "60"
       },
@@ -2486,6 +2485,7 @@
       "name": "Nanjing University",
       "aliases": [],
       "country": "China",
+      "city": "Nanjing",
       "ranks": {
         "THE": "=62",
         "ARWU": "75"
@@ -2655,6 +2655,7 @@
       "name": "Sun Yat-sen University",
       "aliases": [],
       "country": "China",
+      "city": "Guangzhou",
       "ranks": {
         "ARWU": "65"
       },
@@ -2688,6 +2689,7 @@
       "name": "Wageningen University & Research",
       "aliases": [],
       "country": "Netherlands",
+      "city": "Wageningen",
       "ranks": {
         "THE": "66"
       },
@@ -2719,6 +2721,7 @@
       "name": "University of Bonn",
       "aliases": [],
       "country": "Germany",
+      "city": "Bonn",
       "ranks": {
         "THE": "=92",
         "ARWU": "68"
@@ -2799,6 +2802,7 @@
         "Korea Advanced Institute of Science and Technology (KAIST)"
       ],
       "country": "South Korea",
+      "city": "Daejeon",
       "ranks": {
         "THE": "=70"
       },
@@ -2814,6 +2818,7 @@
       "name": "Leiden University",
       "aliases": [],
       "country": "Netherlands",
+      "city": "Leiden",
       "ranks": {
         "THE": "=70"
       },
@@ -2829,6 +2834,7 @@
       "name": "Weizmann Institute of Science",
       "aliases": [],
       "country": "Israel",
+      "city": "Rehovot",
       "ranks": {
         "ARWU": "71"
       },
@@ -2879,6 +2885,7 @@
       "name": "Huazhong University of Science and Technology",
       "aliases": [],
       "country": "China",
+      "city": "Wuhan",
       "ranks": {
         "ARWU": "73"
       },
@@ -2910,6 +2917,7 @@
       "name": "University of Groningen",
       "aliases": [],
       "country": "Netherlands",
+      "city": "Groningen",
       "ranks": {
         "THE": "82",
         "ARWU": "73"
@@ -3167,6 +3175,7 @@
       "name": "Wuhan University",
       "aliases": [],
       "country": "China",
+      "city": "Wuhan",
       "ranks": {
         "ARWU": "81"
       },
@@ -3198,6 +3207,7 @@
       "name": "University of Oslo",
       "aliases": [],
       "country": "Norway",
+      "city": "Oslo",
       "ranks": {
         "ARWU": "83"
       },
@@ -3287,6 +3297,7 @@
       "name": "Aarhus University",
       "aliases": [],
       "country": "Denmark",
+      "city": "Aarhus",
       "ranks": {
         "ARWU": "85"
       },
@@ -3338,6 +3349,7 @@
         "The University of Texas MD Anderson Cancer Center"
       ],
       "country": "United States",
+      "city": "Houston",
       "ranks": {
         "ARWU": "86"
       },
@@ -3353,6 +3365,7 @@
       "name": "Sichuan University",
       "aliases": [],
       "country": "China",
+      "city": "Chengdu",
       "ranks": {
         "ARWU": "87"
       },
@@ -3370,6 +3383,7 @@
         "Sungkyunkwan University (SKKU)"
       ],
       "country": "South Korea",
+      "city": "Seoul",
       "ranks": {
         "THE": "87"
       },
@@ -3501,6 +3515,7 @@
       "name": "The Hebrew University of Jerusalem",
       "aliases": [],
       "country": "Israel",
+      "city": "Jerusalem",
       "ranks": {
         "ARWU": "88"
       },
@@ -3558,6 +3573,7 @@
       "name": "Humboldt University of Berlin",
       "aliases": [],
       "country": "Germany",
+      "city": "Berlin",
       "ranks": {
         "THE": "89"
       },
@@ -3573,6 +3589,7 @@
       "name": "Charité - Universitätsmedizin Berlin",
       "aliases": [],
       "country": "Germany",
+      "city": "Berlin",
       "ranks": {
         "THE": "91"
       },
@@ -3588,6 +3605,7 @@
       "name": "Ghent University",
       "aliases": [],
       "country": "Belgium",
+      "city": "Ghent",
       "ranks": {
         "ARWU": "91"
       },
@@ -3621,6 +3639,7 @@
       "name": "RWTH Aachen University",
       "aliases": [],
       "country": "Germany",
+      "city": "Aachen",
       "ranks": {
         "THE": "=92"
       },
@@ -3654,6 +3673,7 @@
       "name": "Xi'an Jiaotong University",
       "aliases": [],
       "country": "China",
+      "city": "Xi'an",
       "ranks": {
         "ARWU": "92"
       },
@@ -3720,6 +3740,7 @@
       "name": "University of Basel",
       "aliases": [],
       "country": "Switzerland",
+      "city": "Basel",
       "ranks": {
         "ARWU": "94"
       },
@@ -3735,6 +3756,7 @@
       "name": "University of Helsinki",
       "aliases": [],
       "country": "Finland",
+      "city": "Helsinki",
       "ranks": {
         "ARWU": "94"
       },
@@ -3750,6 +3772,7 @@
       "name": "University of Vienna",
       "aliases": [],
       "country": "Austria",
+      "city": "Vienna",
       "ranks": {
         "THE": "=95"
       },
@@ -3765,6 +3788,7 @@
       "name": "Central South University",
       "aliases": [],
       "country": "China",
+      "city": "Changsha",
       "ranks": {
         "ARWU": "96"
       },
@@ -3842,6 +3866,7 @@
       "name": "Technion-Israel Institute of Technology",
       "aliases": [],
       "country": "Israel",
+      "city": "Haifa",
       "ranks": {
         "ARWU": "97"
       },
@@ -3919,6 +3944,7 @@
       "name": "University of Tübingen",
       "aliases": [],
       "country": "Germany",
+      "city": "Tübingen",
       "ranks": {
         "THE": "=98"
       },
@@ -3934,6 +3960,7 @@
       "name": "Stockholm University",
       "aliases": [],
       "country": "Sweden",
+      "city": "Stockholm",
       "ranks": {
         "ARWU": "100"
       },

@@ -85,15 +85,15 @@ export function App() {
   return (
     <TooltipProvider>
       <main className="min-h-screen bg-[linear-gradient(180deg,var(--background)_0%,oklch(0.97_0.01_220)_100%)] text-foreground">
-        <div className="mx-auto grid min-h-screen max-w-7xl gap-5 px-4 py-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
-          <section className="flex min-h-[calc(100vh-2rem)] flex-col gap-4">
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-4 sm:px-6 lg:min-h-screen lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-5 lg:px-8">
+          <section className="flex flex-col gap-4 lg:min-h-[calc(100vh-2rem)]">
             <header className="grid gap-4 rounded-lg border bg-card px-4 py-4 shadow-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
               <div className="min-w-0">
-                <h1 className="text-3xl font-semibold tracking-normal">
+                <h1 className="text-2xl font-semibold tracking-normal sm:text-3xl">
                   Which is Better? Click to Choose.
                 </h1>
               </div>
-              <div className="grid gap-3 sm:w-80">
+              <div className="grid gap-2 sm:w-80">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-sm text-muted-foreground">
                     {session.history.length} compared · {confidence}% confident
@@ -135,14 +135,14 @@ export function App() {
             </header>
 
             {left && right ? (
-              <div className="grid items-center gap-4 lg:grid-cols-[1fr_4rem_1fr]">
+              <div className="grid items-center gap-3 md:grid-cols-[1fr_3.25rem_1fr] lg:gap-4">
                 <UniversityChoice
                   onChoose={() => choose("left")}
                   rating={session.ratings[left.id]}
                   university={left}
                 />
                 <div className="flex items-center justify-center">
-                  <div className="flex size-12 items-center justify-center rounded-full border bg-card text-sm font-semibold shadow-sm">
+                  <div className="flex size-10 items-center justify-center rounded-full border bg-card text-xs font-semibold shadow-sm sm:size-11">
                     OR
                   </div>
                 </div>
@@ -176,8 +176,8 @@ export function App() {
             ) : null}
           </section>
 
-          <aside className="min-h-[calc(100vh-2rem)]">
-            <Card className="sticky top-4 h-[calc(100vh-2rem)] rounded-lg">
+          <aside className="lg:min-h-[calc(100vh-2rem)]">
+            <Card className="h-[min(420px,calc(100vh-2rem))] rounded-lg lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)]">
               <CardHeader className="border-b">
                 <div className="flex items-center justify-between gap-3">
                   <div>
@@ -243,49 +243,44 @@ function UniversityChoice({
 
   return (
     <button
-      className="group flex min-h-[360px] w-full flex-col rounded-lg border bg-card p-0 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
+      aria-label={`Choose ${university.name}`}
+      className="group flex w-full flex-col rounded-lg border bg-card p-0 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 sm:min-h-[340px]"
       onClick={onChoose}
       type="button"
     >
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div>
-          <h2 className="text-3xl font-semibold leading-tight tracking-normal">
+          <h2 className="text-2xl font-semibold leading-tight tracking-normal sm:text-3xl">
             {university.name}
           </h2>
           {location ? (
-            <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="mt-3 flex items-center gap-2 text-sm leading-snug text-muted-foreground">
               <MapPin className="size-4 shrink-0" />
               <span>{location}</span>
             </div>
           ) : null}
         </div>
 
-        <div className="mt-6 grid grid-cols-3 gap-2">
-          <DetailRow label="Current score" value={Math.round(rating.score)} />
+        <div className="mt-5 grid grid-cols-3 gap-2">
+          <DetailRow label="Score" value={Math.round(rating.score)} />
           <DetailRow label="Compared" value={rating.comparisons} />
           <DetailRow label="Record" value={`${rating.wins}-${rating.losses}`} />
         </div>
 
-        <div className="mt-6">
+        <div className="mt-5">
           <p className="mb-2 text-xs font-medium uppercase text-muted-foreground">
             Rankings
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {(Object.entries(university.ranks) as [RankingSource, string | number][]).map(
               ([source, rank]) => (
-                <Badge key={source} variant="outline">
+                <Badge className="text-xs" key={source} variant="outline">
                   {SOURCE_LABELS[source]} #{rank}
                 </Badge>
               ),
             )}
           </div>
         </div>
-
-        {university.aliases.length > 0 ? (
-          <p className="mt-6 text-sm text-muted-foreground">
-            Also listed as {university.aliases.join(", ")}
-          </p>
-        ) : null}
       </div>
     </button>
   );
@@ -293,8 +288,10 @@ function UniversityChoice({
 
 function DetailRow({ label, value }: { label: string; value: number | string }) {
   return (
-    <div className="rounded-md bg-muted px-3 py-2">
-      <span className="block text-xs text-muted-foreground">{label}</span>
+    <div className="rounded-md bg-muted px-2.5 py-2 sm:px-3">
+      <span className="block text-[11px] leading-tight text-muted-foreground sm:text-xs">
+        {label}
+      </span>
       <span className="mt-1 block text-sm font-semibold">{value}</span>
     </div>
   );

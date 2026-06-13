@@ -83,65 +83,73 @@ export function App() {
 
   return (
     <TooltipProvider>
-      <main className="min-h-screen bg-[linear-gradient(180deg,var(--background)_0%,oklch(0.97_0.01_220)_100%)] text-foreground">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-4 sm:px-6 lg:min-h-screen lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-5 lg:px-8">
-          <section className="flex flex-col gap-4 lg:min-h-[calc(100vh-2rem)]">
-            <header className="grid gap-4 rounded-lg border bg-card px-4 py-4 shadow-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
-              <div className="min-w-0">
-                <h1 className="text-2xl font-semibold tracking-normal sm:text-3xl">
+      <main className="min-h-screen bg-background text-foreground">
+        <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8">
+          <section className="flex flex-col gap-5">
+            <header className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_20rem] sm:items-end">
+              <div className="min-w-0 space-y-2">
+                <h1 className="max-w-2xl text-3xl font-semibold leading-tight tracking-normal sm:text-4xl">
                   Which is Better? Click to Choose.
                 </h1>
+                <p className="text-sm text-muted-foreground">
+                  {session.history.length} compared · {confidence}% confident
+                </p>
               </div>
-              <div className="grid gap-2 sm:w-80">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm text-muted-foreground">
-                    {session.history.length} compared · {confidence}% confident
-                  </p>
-                  <div className="flex items-center gap-1.5">
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          aria-label="Undo last comparison"
-                          disabled={session.history.length === 0}
-                          onClick={() =>
-                            setSession((current) => undoComparison(current))
-                          }
-                          size="icon"
-                          variant="ghost"
-                        >
-                          <Undo2 />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>Undo last comparison</TooltipContent>
-                    </Tooltip>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          aria-label="Reset ranking"
-                          onClick={reset}
-                          size="icon"
-                          variant="ghost"
-                        >
-                          <RotateCcw />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>Reset ranking</TooltipContent>
-                    </Tooltip>
-                  </div>
+              <div className="grid gap-2">
+                <div className="flex items-center justify-end gap-1.5">
+                  {left && right ? (
+                    <Button
+                      className="mr-auto sm:mr-2"
+                      onClick={() => choose("skip")}
+                      variant="outline"
+                    >
+                      <SkipForward />
+                      Skip
+                    </Button>
+                  ) : null}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        aria-label="Undo last comparison"
+                        disabled={session.history.length === 0}
+                        onClick={() =>
+                          setSession((current) => undoComparison(current))
+                        }
+                        size="icon"
+                        variant="outline"
+                      >
+                        <Undo2 />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>Undo last comparison</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        aria-label="Reset ranking"
+                        onClick={reset}
+                        size="icon"
+                        variant="outline"
+                      >
+                        <RotateCcw />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>Reset ranking</TooltipContent>
+                  </Tooltip>
                 </div>
                 <Progress value={confidence} className="h-1.5" />
               </div>
             </header>
 
             {left && right ? (
-              <div className="grid items-center gap-3 md:grid-cols-[1fr_3.25rem_1fr] lg:gap-4">
+              <div className="grid items-center gap-3 md:grid-cols-[minmax(0,1fr)_3rem_minmax(0,1fr)] lg:gap-5">
                 <UniversityChoice
                   onChoose={() => choose("left")}
                   rating={session.ratings[left.id]}
                   university={left}
                 />
                 <div className="flex items-center justify-center">
-                  <div className="flex size-10 items-center justify-center rounded-full border bg-card text-xs font-semibold shadow-sm sm:size-11">
+                  <div className="flex size-10 items-center justify-center rounded-full border bg-background/85 text-xs font-semibold shadow-sm">
                     OR
                   </div>
                 </div>
@@ -152,7 +160,7 @@ export function App() {
                 />
               </div>
             ) : (
-              <Card className="flex flex-1 items-center justify-center rounded-lg">
+              <Card className="flex flex-1 items-center justify-center">
                 <CardContent className="text-center">
                   <Trophy className="mx-auto size-10 text-primary" />
                   <h2 className="mt-4 text-2xl font-semibold">
@@ -164,25 +172,16 @@ export function App() {
                 </CardContent>
               </Card>
             )}
-
-            {left && right ? (
-              <div className="flex justify-center">
-                <Button onClick={() => choose("skip")} variant="outline">
-                  <SkipForward />
-                  Skip this pair
-                </Button>
-              </div>
-            ) : null}
           </section>
 
-          <aside className="lg:min-h-[calc(100vh-2rem)]">
-            <Card className="h-[min(420px,calc(100vh-2rem))] rounded-lg lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)]">
+          <aside>
+            <Card className="h-[min(520px,calc(100vh-2.5rem))]">
               <CardHeader className="border-b">
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex items-start justify-between gap-3">
                   <div>
                     <CardTitle>Personal Ranking</CardTitle>
                     <CardDescription>
-                      Top choices so far
+                      All {ordered.length} universities
                     </CardDescription>
                   </div>
                   <Button onClick={copyRanking} size="sm" variant="outline">
@@ -191,35 +190,31 @@ export function App() {
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent className="flex min-h-0 flex-1 flex-col pt-0">
-                <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-                  <ol className="space-y-1.5 py-3">
-                    {ordered.map((university, index) => {
-                      const rating = session.ratings[university.id];
-                      return (
-                        <li
-                          className="grid grid-cols-[1.6rem_1fr_auto] items-center gap-2 rounded-md px-2 py-1.5 hover:bg-muted/70"
-                          key={university.id}
-                        >
-                          <span className="text-xs tabular-nums text-muted-foreground">
-                            {index + 1}
-                          </span>
-                          <div className="min-w-0">
-                            <p className="truncate text-sm font-medium">
-                              {university.name}
-                            </p>
-                            <p className="truncate text-xs text-muted-foreground">
-                              {university.country ?? "Location unavailable"}
-                            </p>
-                          </div>
-                          <Badge className="text-xs" variant="outline">
-                            {Math.round(rating.score)}
-                          </Badge>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </div>
+              <CardContent className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
+                <ol className="space-y-1">
+                  {ordered.map((university, index) => {
+                    const rating = session.ratings[university.id];
+                    return (
+                      <li
+                        className="grid grid-cols-[2rem_1fr_auto] items-center gap-2 rounded-md px-2 py-2 hover:bg-muted/70"
+                        key={university.id}
+                      >
+                        <RankNumber index={index} />
+                        <div className="min-w-0">
+                          <p className="truncate text-sm font-medium leading-tight">
+                            {university.name}
+                          </p>
+                          <p className="mt-0.5 truncate text-xs text-muted-foreground">
+                            {formatLocation(university)}
+                          </p>
+                        </div>
+                        <span className="text-xs font-medium tabular-nums text-muted-foreground">
+                          {Math.round(rating.score)}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
               </CardContent>
             </Card>
           </aside>
@@ -238,17 +233,21 @@ function UniversityChoice({
   rating: RankingSession["ratings"][string];
   university: University;
 }) {
-  const location = [university.city, university.country].filter(Boolean).join(", ");
+  const location = formatLocation(university);
+  const rankingEntries = Object.entries(university.ranks) as [
+    RankingSource,
+    string | number,
+  ][];
 
   return (
     <button
       aria-label={`Choose ${university.name}`}
-      className="group flex w-full flex-col rounded-lg border bg-card p-0 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25 sm:min-h-[340px]"
+      className="group flex w-full overflow-hidden rounded-lg border bg-card text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
       onClick={onChoose}
       type="button"
     >
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div>
+      <div className="flex min-h-[280px] flex-1 flex-col p-5 sm:min-h-[320px] sm:p-6">
+        <div className="flex-1">
           <h2 className="text-2xl font-semibold leading-tight tracking-normal sm:text-3xl">
             {university.name}
           </h2>
@@ -260,24 +259,19 @@ function UniversityChoice({
           ) : null}
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          <DetailRow label="Score" value={Math.round(rating.score)} />
-          <DetailRow label="Compared" value={rating.comparisons} />
-          <DetailRow label="Record" value={`${rating.wins}-${rating.losses}`} />
+        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t pt-4 text-sm">
+          <Metric label="Score" value={Math.round(rating.score)} />
+          <Metric label="Compared" value={rating.comparisons} />
+          <Metric label="Record" value={`${rating.wins}-${rating.losses}`} />
         </div>
 
         <div className="mt-5">
-          <p className="mb-2 text-xs font-medium uppercase text-muted-foreground">
-            Rankings
-          </p>
           <div className="flex flex-wrap gap-1.5">
-            {(Object.entries(university.ranks) as [RankingSource, string | number][]).map(
-              ([source, rank]) => (
-                <Badge className="text-xs" key={source} variant="outline">
-                  {SOURCE_LABELS[source]} #{rank}
-                </Badge>
-              ),
-            )}
+            {rankingEntries.map(([source, rank]) => (
+              <Badge className="text-xs" key={source} variant="outline">
+                {SOURCE_LABELS[source]} #{rank}
+              </Badge>
+            ))}
           </div>
         </div>
       </div>
@@ -285,13 +279,26 @@ function UniversityChoice({
   );
 }
 
-function DetailRow({ label, value }: { label: string; value: number | string }) {
+function Metric({ label, value }: { label: string; value: number | string }) {
   return (
-    <div className="rounded-md bg-muted px-2.5 py-2 sm:px-3">
-      <span className="block text-[11px] leading-tight text-muted-foreground sm:text-xs">
-        {label}
-      </span>
-      <span className="mt-1 block text-sm font-semibold">{value}</span>
+    <div>
+      <span className="block text-xs text-muted-foreground">{label}</span>
+      <span className="mt-0.5 block font-semibold">{value}</span>
     </div>
+  );
+}
+
+function formatLocation(university: University): string {
+  return (
+    [university.city, university.country].filter(Boolean).join(", ") ||
+    "Location unavailable"
+  );
+}
+
+function RankNumber({ index }: { index: number }) {
+  return (
+    <span className="text-xs tabular-nums text-muted-foreground">
+      {index + 1}
+    </span>
   );
 }

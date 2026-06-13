@@ -15,8 +15,15 @@ export function loadSession(list: University[]): RankingSession {
   try {
     const parsed = JSON.parse(raw) as RankingSession;
     const ids = new Set(list.map((university) => university.id));
-    const validRatings = Object.keys(parsed.ratings).every((id) => ids.has(id));
-    if (!validRatings) return createInitialSession(list);
+    const ratingIds = Object.keys(parsed.ratings);
+    const validRatings =
+      ratingIds.length === ids.size &&
+      ratingIds.every((id) => ids.has(id)) &&
+      list.every((university) => parsed.ratings[university.id]);
+    const validHistory = parsed.history.every(
+      ({ leftId, rightId }) => ids.has(leftId) && ids.has(rightId),
+    );
+    if (!validRatings || !validHistory) return createInitialSession(list);
     return parsed;
   } catch {
     return createInitialSession(list);

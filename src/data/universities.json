@@ -1749,8 +1749,10 @@
     },
     {
       "id": "rutgers-university-new-brunswick",
-      "name": "Rutgers University--New Brunswick",
-      "aliases": [],
+      "name": "Rutgers University-New Brunswick",
+      "aliases": [
+        "Rutgers University--New Brunswick"
+      ],
       "country": "United States",
       "city": "Piscataway",
       "ranks": {
@@ -2033,7 +2035,7 @@
       "name": "Universität Heidelberg",
       "aliases": [],
       "country": "Germany",
-      "city": "69117 Heidelberg,",
+      "city": "Heidelberg",
       "ranks": {
         "QS": "80",
         "THE": "49"
@@ -2533,7 +2535,7 @@
         "City University of Hong Kong (CityUHK)"
       ],
       "country": "Hong Kong",
-      "city": "Kowloon,",
+      "city": "Kowloon",
       "ranks": {
         "QS": "=63",
         "THE": "73",
@@ -2612,8 +2614,10 @@
     },
     {
       "id": "university-of-massachusetts-amherst",
-      "name": "University of Massachusetts--Amherst",
-      "aliases": [],
+      "name": "University of Massachusetts Amherst",
+      "aliases": [
+        "University of Massachusetts--Amherst"
+      ],
       "country": "United States",
       "city": "Amherst",
       "ranks": {
@@ -2981,8 +2985,10 @@
     },
     {
       "id": "rutgers-university-newark",
-      "name": "Rutgers University--Newark",
-      "aliases": [],
+      "name": "Rutgers University-Newark",
+      "aliases": [
+        "Rutgers University--Newark"
+      ],
       "country": "United States",
       "city": "Newark",
       "ranks": {
@@ -3737,7 +3743,7 @@
         "The University of Sheffield"
       ],
       "country": "United Kingdom",
-      "city": "Sheffield,",
+      "city": "Sheffield",
       "ranks": {
         "QS": "92"
       },
@@ -3803,7 +3809,7 @@
       "name": "University of Alberta",
       "aliases": [],
       "country": "Canada",
-      "city": "Edmonton,",
+      "city": "Edmonton",
       "ranks": {
         "QS": "=94"
       },
@@ -3922,8 +3928,10 @@
     },
     {
       "id": "rutgers-university-camden",
-      "name": "Rutgers University--Camden",
-      "aliases": [],
+      "name": "Rutgers University-Camden",
+      "aliases": [
+        "Rutgers University--Camden"
+      ],
       "country": "United States",
       "city": "Camden",
       "ranks": {
@@ -4000,7 +4008,7 @@
       "name": "Politecnico di Milano",
       "aliases": [],
       "country": "Italy",
-      "city": "Milan,",
+      "city": "Milan",
       "ranks": {
         "QS": "=98"
       },

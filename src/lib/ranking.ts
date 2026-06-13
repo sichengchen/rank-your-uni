@@ -1,4 +1,4 @@
-import rankingsPayload from "@/data/universities.json";
+import rankingsPayload from "@/data/universities-2026.json";
 
 export type RankingSource = "QS" | "THE" | "ARWU" | "US_NEWS";
 

@@ -27,7 +27,7 @@
         "records": 101
       }
     },
-    "unionRecords": 224
+    "unionRecords": 214
   },
   "universities": [
     {
@@ -538,21 +538,25 @@
       "id": "nanyang-technological-university-singapore",
       "name": "Nanyang Technological University, Singapore",
       "aliases": [
-        "Nanyang Technological University, Singapore (NTU Singapore)"
+        "Nanyang Technological University, Singapore (NTU Singapore)",
+        "Nanyang Technological University"
       ],
       "country": "Singapore",
       "city": "Singapore",
       "ranks": {
         "QS": "12",
-        "THE": "=31"
+        "THE": "=31",
+        "ARWU": "88"
       },
       "sourceUrls": {
         "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/nanyang-technological-university-singapore-ntu-singapore",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/nanyang-technological-university-singapore"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/nanyang-technological-university-singapore",
+        "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
     {
@@ -615,16 +619,25 @@
     {
       "id": "paris-saclay-university",
       "name": "Paris-Saclay University",
-      "aliases": [],
+      "aliases": [
+        "Université Paris-Saclay"
+      ],
       "country": "France",
+      "city": "Paris",
       "ranks": {
-        "ARWU": "13"
+        "ARWU": "13",
+        "QS": "=70",
+        "THE": "=68"
       },
       "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025",
+        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
       },
       "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
+        "ARWU": "https://www.shanghairanking.com/institution/",
+        "QS": "https://www.topuniversities.com/universities/universite-paris-saclay",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/universite-paris-saclay"
       }
     },
     {
@@ -837,21 +850,25 @@
       "name": "University of New South Wales",
       "aliases": [
         "The University of New South Wales (UNSW Sydney)",
-        "The University of New South Wales"
+        "The University of New South Wales",
+        "UNSW Sydney"
       ],
       "country": "Australia",
       "city": "Sydney",
       "ranks": {
         "QS": "20",
-        "ARWU": "80"
+        "ARWU": "80",
+        "THE": "79"
       },
       "sourceUrls": {
         "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
       },
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/university-new-south-wales-unsw-sydney",
-        "ARWU": "https://www.shanghairanking.com/institution/"
+        "ARWU": "https://www.shanghairanking.com/institution/",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/unsw-sydney"
       }
     },
     {
@@ -1156,17 +1173,26 @@
     {
       "id": "universite-psl",
       "name": "Université PSL",
-      "aliases": [],
+      "aliases": [
+        "PSL University",
+        "Paris Sciences et Lettres – PSL Research University Paris"
+      ],
       "country": "France",
       "city": "Paris",
       "ranks": {
-        "QS": "28"
+        "QS": "28",
+        "THE": "48",
+        "ARWU": "34"
       },
       "sourceUrls": {
-        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100"
+        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
-        "QS": "https://www.topuniversities.com/universities/universite-psl"
+        "QS": "https://www.topuniversities.com/universities/universite-psl",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/paris-sciences-et-lettres-psl-research-university-paris",
+        "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
     {
@@ -1438,30 +1464,20 @@
     {
       "id": "lmu-munich",
       "name": "LMU Munich",
-      "aliases": [],
+      "aliases": [
+        "University of Munich"
+      ],
       "country": "Germany",
       "ranks": {
-        "THE": "34"
+        "THE": "34",
+        "ARWU": "42"
       },
       "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/lmu-munich"
-      }
-    },
-    {
-      "id": "psl-university",
-      "name": "PSL University",
-      "aliases": [],
-      "country": "France",
-      "ranks": {
-        "ARWU": "34"
-      },
-      "sourceUrls": {
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
         "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/lmu-munich",
         "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
@@ -1714,17 +1730,22 @@
       "id": "ohio-state-university",
       "name": "The Ohio State University",
       "aliases": [
-        "Ohio State University"
+        "Ohio State University",
+        "Ohio State University, Columbus"
       ],
       "country": "United States",
       "city": "Columbus",
       "ranks": {
-        "US_NEWS": 41
+        "US_NEWS": 41,
+        "ARWU": "83"
       },
       "sourceUrls": {
-        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities"
+        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities",
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
-      "profileUrls": {}
+      "profileUrls": {
+        "ARWU": "https://www.shanghairanking.com/institution/"
+      }
     },
     {
       "id": "boston-university",
@@ -1776,21 +1797,6 @@
       "sourceUrls": {
         "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025",
         "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities"
-      },
-      "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
-      }
-    },
-    {
-      "id": "university-of-munich",
-      "name": "University of Munich",
-      "aliases": [],
-      "country": "Germany",
-      "ranks": {
-        "ARWU": "42"
-      },
-      "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
         "ARWU": "https://www.shanghairanking.com/institution/"
@@ -1952,20 +1958,24 @@
       "id": "purdue-university",
       "name": "Purdue University",
       "aliases": [
-        "Purdue University--Main Campus"
+        "Purdue University--Main Campus",
+        "Purdue University West Lafayette"
       ],
       "country": "United States",
       "city": "West Lafayette",
       "ranks": {
         "QS": "=88",
-        "US_NEWS": 46
+        "US_NEWS": 46,
+        "THE": "85"
       },
       "sourceUrls": {
         "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities"
+        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
       },
       "profileUrls": {
-        "QS": "https://www.topuniversities.com/universities/purdue-university"
+        "QS": "https://www.topuniversities.com/universities/purdue-university",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/purdue-university-west-lafayette"
       }
     },
     {
@@ -2016,37 +2026,27 @@
       }
     },
     {
-      "id": "paris-sciences-et-lettres-psl-research-university-paris",
-      "name": "Paris Sciences et Lettres – PSL Research University Paris",
-      "aliases": [],
-      "country": "France",
-      "ranks": {
-        "THE": "48"
-      },
-      "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/paris-sciences-et-lettres-psl-research-university-paris"
-      }
-    },
-    {
       "id": "universitat-heidelberg",
       "name": "Universität Heidelberg",
-      "aliases": [],
+      "aliases": [
+        "Heidelberg University"
+      ],
       "country": "Germany",
       "city": "Heidelberg",
       "ranks": {
         "QS": "80",
-        "THE": "49"
+        "THE": "49",
+        "ARWU": "51"
       },
       "sourceUrls": {
         "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
       },
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/universitat-heidelberg",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/universitat-heidelberg"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/universitat-heidelberg",
+        "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
     {
@@ -2117,21 +2117,6 @@
       "profileUrls": {}
     },
     {
-      "id": "heidelberg-university",
-      "name": "Heidelberg University",
-      "aliases": [],
-      "country": "Germany",
-      "ranks": {
-        "ARWU": "51"
-      },
-      "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
-      },
-      "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
-      }
-    },
-    {
       "id": "texas-a-and-m-university",
       "name": "Texas A&M University",
       "aliases": [],
@@ -2172,20 +2157,24 @@
       "name": "University of Minnesota Twin Cities",
       "aliases": [
         "University of Minnesota, Twin Cities",
-        "University of Minnesota--Twin Cities"
+        "University of Minnesota--Twin Cities",
+        "University of Minnesota"
       ],
       "country": "United States",
       "city": "Minneapolis",
       "ranks": {
         "ARWU": "51",
-        "US_NEWS": 59
+        "US_NEWS": 59,
+        "THE": "88"
       },
       "sourceUrls": {
         "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025",
-        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities"
+        "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
       },
       "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
+        "ARWU": "https://www.shanghairanking.com/institution/",
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/university-minnesota"
       }
     },
     {
@@ -2726,25 +2715,6 @@
       }
     },
     {
-      "id": "universite-paris-saclay",
-      "name": "Université Paris-Saclay",
-      "aliases": [],
-      "country": "France",
-      "city": "Paris",
-      "ranks": {
-        "QS": "=70",
-        "THE": "=68"
-      },
-      "sourceUrls": {
-        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "QS": "https://www.topuniversities.com/universities/universite-paris-saclay",
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/universite-paris-saclay"
-      }
-    },
-    {
       "id": "university-of-bonn",
       "name": "University of Bonn",
       "aliases": [],
@@ -3137,21 +3107,6 @@
       }
     },
     {
-      "id": "unsw-sydney",
-      "name": "UNSW Sydney",
-      "aliases": [],
-      "country": "Australia",
-      "ranks": {
-        "THE": "79"
-      },
-      "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/unsw-sydney"
-      }
-    },
-    {
       "id": "colorado-school-of-mines",
       "name": "Colorado School of Mines",
       "aliases": [],
@@ -3236,21 +3191,6 @@
       },
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/adelaide-university"
-      }
-    },
-    {
-      "id": "ohio-state-university-columbus",
-      "name": "Ohio State University, Columbus",
-      "aliases": [],
-      "country": "United States",
-      "ranks": {
-        "ARWU": "83"
-      },
-      "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
-      },
-      "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
       }
     },
     {
@@ -3355,21 +3295,6 @@
       },
       "profileUrls": {
         "ARWU": "https://www.shanghairanking.com/institution/"
-      }
-    },
-    {
-      "id": "purdue-university-west-lafayette",
-      "name": "Purdue University West Lafayette",
-      "aliases": [],
-      "country": "United States",
-      "ranks": {
-        "THE": "85"
-      },
-      "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/purdue-university-west-lafayette"
       }
     },
     {
@@ -3544,21 +3469,6 @@
       "profileUrls": {}
     },
     {
-      "id": "nanyang-technological-university",
-      "name": "Nanyang Technological University",
-      "aliases": [],
-      "country": "Singapore",
-      "ranks": {
-        "ARWU": "88"
-      },
-      "sourceUrls": {
-        "ARWU": "https://www.shanghairanking.com/rankings/arwu/2025"
-      },
-      "profileUrls": {
-        "ARWU": "https://www.shanghairanking.com/institution/"
-      }
-    },
-    {
       "id": "rochester-institute-of-technology",
       "name": "Rochester Institute of Technology",
       "aliases": [],
@@ -3628,21 +3538,6 @@
         "US_NEWS": "https://www.usnews.com/best-colleges/rankings/national-universities"
       },
       "profileUrls": {}
-    },
-    {
-      "id": "university-of-minnesota",
-      "name": "University of Minnesota",
-      "aliases": [],
-      "country": "United States",
-      "ranks": {
-        "THE": "88"
-      },
-      "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
-      },
-      "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/university-minnesota"
-      }
     },
     {
       "id": "university-of-south-florida",

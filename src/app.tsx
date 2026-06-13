@@ -17,7 +17,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Tooltip,
   TooltipContent,
@@ -193,9 +192,9 @@ export function App() {
                 </div>
               </CardHeader>
               <CardContent className="flex min-h-0 flex-1 flex-col pt-0">
-                <ScrollArea className="min-h-0 flex-1 pr-3">
+                <div className="min-h-0 flex-1 overflow-y-auto pr-1">
                   <ol className="space-y-1.5 py-3">
-                    {ordered.slice(0, 60).map((university, index) => {
+                    {ordered.map((university, index) => {
                       const rating = session.ratings[university.id];
                       return (
                         <li
@@ -220,7 +219,7 @@ export function App() {
                       );
                     })}
                   </ol>
-                </ScrollArea>
+                </div>
               </CardContent>
             </Card>
           </aside>

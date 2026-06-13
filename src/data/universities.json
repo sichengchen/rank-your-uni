@@ -27,7 +27,7 @@
         "records": 101
       }
     },
-    "unionRecords": 225
+    "unionRecords": 224
   },
   "universities": [
     {
@@ -2231,16 +2231,23 @@
     {
       "id": "london-school-of-economics-and-political-science",
       "name": "London School of Economics and Political Science",
-      "aliases": [],
+      "aliases": [
+        "The London School of Economics and Political Science",
+        "The London School of Economics and Political Science (LSE)"
+      ],
       "country": "United Kingdom",
+      "city": "London",
       "ranks": {
-        "THE": "52"
+        "THE": "52",
+        "QS": "56"
       },
       "sourceUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100"
       },
       "profileUrls": {
-        "THE": "https://www.timeshighereducation.com/world-university-rankings/london-school-economics-and-political-science"
+        "THE": "https://www.timeshighereducation.com/world-university-rankings/london-school-economics-and-political-science",
+        "QS": "https://www.topuniversities.com/universities/london-school-economics-political-science-lse"
       }
     },
     {
@@ -2279,24 +2286,6 @@
       "profileUrls": {
         "QS": "https://www.topuniversities.com/universities/hong-kong-polytechnic-university",
         "THE": "https://www.timeshighereducation.com/world-university-rankings/hong-kong-polytechnic-university"
-      }
-    },
-    {
-      "id": "the-london-school-of-economics-and-political-science",
-      "name": "The London School of Economics and Political Science",
-      "aliases": [
-        "The London School of Economics and Political Science (LSE)"
-      ],
-      "country": "United Kingdom",
-      "city": "London",
-      "ranks": {
-        "QS": "56"
-      },
-      "sourceUrls": {
-        "QS": "https://www.topuniversities.com/world-university-rankings?items_per_page=100"
-      },
-      "profileUrls": {
-        "QS": "https://www.topuniversities.com/universities/london-school-economics-political-science-lse"
       }
     },
     {

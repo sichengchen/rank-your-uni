@@ -8,6 +8,7 @@ import {
   getSuggestedPair,
   rankNumber,
   undoComparison,
+  universities,
   type University,
 } from "./ranking";
 
@@ -42,6 +43,27 @@ const fixture: University[] = [
 ];
 
 describe("ranking engine", () => {
+  it("does not ship duplicate generated universities", () => {
+    const ids = new Set<string>();
+    const names = new Set<string>();
+
+    for (const university of universities) {
+      const normalizedName = university.name
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/^the\s+/i, "")
+        .replace(/&/g, " and ")
+        .replace(/[^a-zA-Z0-9]+/g, " ")
+        .trim()
+        .toLowerCase();
+
+      expect(ids.has(university.id), university.id).toBe(false);
+      expect(names.has(normalizedName), university.name).toBe(false);
+      ids.add(university.id);
+      names.add(normalizedName);
+    }
+  });
+
   it("parses numeric rank values from ties and labels", () => {
     expect(rankNumber("=17")).toBe(17);
     expect(rankNumber("top 10")).toBe(10);

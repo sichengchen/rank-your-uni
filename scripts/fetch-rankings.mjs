@@ -59,6 +59,7 @@ const ALIASES = new Map([
   ["the university of sydney", "University of Sydney"],
   ["the university of manchester", "University of Manchester"],
   ["the university of edinburgh", "University of Edinburgh"],
+  ["the london school of economics and political science", "London School of Economics and Political Science"],
   ["king's college london", "King's College London"],
   ["kings college london", "King's College London"],
 ]);

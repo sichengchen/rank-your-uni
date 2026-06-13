@@ -4,7 +4,7 @@ import {
   type University,
 } from "@/lib/ranking";
 
-const STORAGE_KEY = "rank-your-uni.session.v1";
+const STORAGE_KEY = "rank-your-uni.session.v2";
 
 export function loadSession(list: University[]): RankingSession {
   if (typeof window === "undefined") return createInitialSession(list);

@@ -70,6 +70,18 @@ describe("ranking engine", () => {
     expect(rankNumber(undefined)).toBe(126);
   });
 
+  it("uses source rankings only as initial order reference", () => {
+    const session = createInitialSession(fixture);
+    const scores = Object.values(session.ratings).map((rating) => rating.score);
+
+    expect(new Set(scores)).toEqual(new Set([1400]));
+    expect(getOrderedUniversities(session, fixture).map(({ id }) => id)).toEqual([
+      "alpha",
+      "beta",
+      "gamma",
+    ]);
+  });
+
   it("suggests an uncompared pair and updates ratings", () => {
     const session = createInitialSession(fixture);
     const pair = getSuggestedPair(session, fixture);

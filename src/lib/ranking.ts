@@ -64,19 +64,16 @@ export function sourceAverage(university: University): number {
 
 export function createInitialSession(list: University[] = universities): RankingSession {
   const ratings = Object.fromEntries(
-    list.map((university) => {
-      const sourceSeed = Math.max(0, SOURCE_FALLBACK_RANK - sourceAverage(university));
-      return [
-        university.id,
-        {
-          score: Math.round(DEFAULT_RATING + sourceSeed * 2.2),
-          comparisons: 0,
-          wins: 0,
-          losses: 0,
-          skips: 0,
-        },
-      ];
-    }),
+    list.map((university) => [
+      university.id,
+      {
+        score: DEFAULT_RATING,
+        comparisons: 0,
+        wins: 0,
+        losses: 0,
+        skips: 0,
+      },
+    ]),
   );
 
   return { ratings, history: [] };

@@ -227,7 +227,7 @@ export function App() {
               rel="noreferrer"
               target="_blank"
             >
-              Visit on GitHub
+              GitHub Repository
             </a>
             <span>
               Based on the rankings from{" "}

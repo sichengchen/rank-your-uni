@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  Check,
   ClipboardCopy,
-  GraduationCap,
   MapPin,
   RotateCcw,
   SkipForward,
@@ -20,7 +18,6 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
@@ -34,7 +31,6 @@ import {
   getConfidence,
   getOrderedUniversities,
   getSuggestedPair,
-  rankingsMetadata,
   undoComparison,
   type ComparisonResult,
   type RankingSource,
@@ -88,83 +84,71 @@ export function App() {
 
   return (
     <TooltipProvider>
-      <main className="min-h-screen bg-[linear-gradient(180deg,var(--background)_0%,oklch(0.965_0.015_220)_100%)] text-foreground">
-        <div className="mx-auto grid min-h-screen max-w-7xl gap-6 px-4 py-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8">
-          <section className="flex min-h-[calc(100vh-2.5rem)] flex-col">
-            <header className="flex flex-col gap-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                  <GraduationCap className="size-4" />
-                  {rankingsMetadata.unionRecords} universities
-                </div>
-                <h1 className="mt-2 text-3xl font-semibold tracking-normal sm:text-4xl">
+      <main className="min-h-screen bg-[linear-gradient(180deg,var(--background)_0%,oklch(0.97_0.01_220)_100%)] text-foreground">
+        <div className="mx-auto grid min-h-screen max-w-7xl gap-5 px-4 py-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
+          <section className="flex min-h-[calc(100vh-2rem)] flex-col gap-4">
+            <header className="grid gap-4 rounded-lg border bg-card px-4 py-4 shadow-sm sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:px-5">
+              <div className="min-w-0">
+                <h1 className="text-3xl font-semibold tracking-normal">
                   Which is Better? Click to Choose.
                 </h1>
               </div>
-              <div className="flex items-center gap-2">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      aria-label="Undo last comparison"
-                      disabled={session.history.length === 0}
-                      onClick={() =>
-                        setSession((current) => undoComparison(current))
-                      }
-                      size="icon"
-                      variant="outline"
-                    >
-                      <Undo2 />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Undo last comparison</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      aria-label="Reset ranking"
-                      onClick={reset}
-                      size="icon"
-                      variant="outline"
-                    >
-                      <RotateCcw />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Reset ranking</TooltipContent>
-                </Tooltip>
+              <div className="grid gap-3 sm:w-80">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm text-muted-foreground">
+                    {session.history.length} compared · {confidence}% confident
+                  </p>
+                  <div className="flex items-center gap-1.5">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          aria-label="Undo last comparison"
+                          disabled={session.history.length === 0}
+                          onClick={() =>
+                            setSession((current) => undoComparison(current))
+                          }
+                          size="icon"
+                          variant="ghost"
+                        >
+                          <Undo2 />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>Undo last comparison</TooltipContent>
+                    </Tooltip>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          aria-label="Reset ranking"
+                          onClick={reset}
+                          size="icon"
+                          variant="ghost"
+                        >
+                          <RotateCcw />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>Reset ranking</TooltipContent>
+                    </Tooltip>
+                  </div>
+                </div>
+                <Progress value={confidence} className="h-1.5" />
               </div>
             </header>
 
-            <div className="mb-5 grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
-              <div>
-                <Progress value={confidence} className="h-2" />
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {session.history.length} comparisons completed. Confidence{" "}
-                  {confidence}%.
-                </p>
-              </div>
-              <Button onClick={() => choose("skip")} variant="outline">
-                <SkipForward />
-                Skip
-              </Button>
-            </div>
-
             {left && right ? (
-              <div className="grid flex-1 items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr]">
+              <div className="grid items-center gap-4 lg:grid-cols-[1fr_4rem_1fr]">
                 <UniversityChoice
                   onChoose={() => choose("left")}
                   rating={session.ratings[left.id]}
-                  side="left"
                   university={left}
                 />
                 <div className="flex items-center justify-center">
-                  <div className="flex size-14 items-center justify-center rounded-full border bg-card text-base font-semibold shadow-sm">
+                  <div className="flex size-12 items-center justify-center rounded-full border bg-card text-sm font-semibold shadow-sm">
                     OR
                   </div>
                 </div>
                 <UniversityChoice
                   onChoose={() => choose("right")}
                   rating={session.ratings[right.id]}
-                  side="right"
                   university={right}
                 />
               </div>
@@ -181,16 +165,25 @@ export function App() {
                 </CardContent>
               </Card>
             )}
+
+            {left && right ? (
+              <div className="flex justify-center">
+                <Button onClick={() => choose("skip")} variant="outline">
+                  <SkipForward />
+                  Skip this pair
+                </Button>
+              </div>
+            ) : null}
           </section>
 
-          <aside className="min-h-[calc(100vh-2.5rem)]">
-            <Card className="sticky top-5 h-[calc(100vh-2.5rem)] rounded-lg">
-              <CardHeader>
+          <aside className="min-h-[calc(100vh-2rem)]">
+            <Card className="sticky top-4 h-[calc(100vh-2rem)] rounded-lg">
+              <CardHeader className="border-b">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <CardTitle>Personal Ranking</CardTitle>
                     <CardDescription>
-                      Updated after every choice
+                      Top choices so far
                     </CardDescription>
                   </div>
                   <Button onClick={copyRanking} size="sm" variant="outline">
@@ -199,19 +192,17 @@ export function App() {
                   </Button>
                 </div>
               </CardHeader>
-              <CardContent className="flex min-h-0 flex-1 flex-col gap-4">
-                <SourceSummary />
-                <Separator />
+              <CardContent className="flex min-h-0 flex-1 flex-col pt-0">
                 <ScrollArea className="min-h-0 flex-1 pr-3">
-                  <ol className="space-y-2">
+                  <ol className="space-y-1.5 py-3">
                     {ordered.slice(0, 60).map((university, index) => {
                       const rating = session.ratings[university.id];
                       return (
                         <li
-                          className="grid grid-cols-[2rem_1fr_auto] items-center gap-2 rounded-md px-2 py-2 hover:bg-muted/70"
+                          className="grid grid-cols-[1.6rem_1fr_auto] items-center gap-2 rounded-md px-2 py-1.5 hover:bg-muted/70"
                           key={university.id}
                         >
-                          <span className="text-sm tabular-nums text-muted-foreground">
+                          <span className="text-xs tabular-nums text-muted-foreground">
                             {index + 1}
                           </span>
                           <div className="min-w-0">
@@ -222,7 +213,7 @@ export function App() {
                               {university.country ?? "Location unavailable"}
                             </p>
                           </div>
-                          <Badge variant="outline">
+                          <Badge className="text-xs" variant="outline">
                             {Math.round(rating.score)}
                           </Badge>
                         </li>
@@ -242,51 +233,41 @@ export function App() {
 function UniversityChoice({
   onChoose,
   rating,
-  side,
   university,
 }: {
   onChoose: () => void;
   rating: RankingSession["ratings"][string];
-  side: "left" | "right";
   university: University;
 }) {
   const location = [university.city, university.country].filter(Boolean).join(", ");
 
   return (
     <button
-      className="group flex min-h-[480px] w-full flex-col rounded-lg border bg-card p-0 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
+      className="group flex min-h-[360px] w-full flex-col rounded-lg border bg-card p-0 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/45 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/25"
       onClick={onChoose}
       type="button"
     >
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <div className="flex items-start justify-between gap-4">
-          <Badge variant="secondary">{side === "left" ? "University 1" : "University 2"}</Badge>
-          <div className="flex items-center gap-1 rounded-md bg-accent px-2 py-1 text-xs font-medium text-accent-foreground">
-            <Check className="size-3.5 opacity-0 transition group-hover:opacity-100" />
-            Choose
-          </div>
-        </div>
-
-        <div className="mt-10">
-          <h2 className="text-3xl font-semibold leading-tight tracking-normal sm:text-4xl">
+      <div className="flex flex-1 flex-col p-6">
+        <div>
+          <h2 className="text-3xl font-semibold leading-tight tracking-normal">
             {university.name}
           </h2>
           {location ? (
-            <div className="mt-4 flex items-center gap-2 text-base text-muted-foreground">
+            <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="size-4 shrink-0" />
               <span>{location}</span>
             </div>
           ) : null}
         </div>
 
-        <div className="mt-8 grid gap-3">
+        <div className="mt-6 grid grid-cols-3 gap-2">
           <DetailRow label="Current score" value={Math.round(rating.score)} />
           <DetailRow label="Compared" value={rating.comparisons} />
           <DetailRow label="Record" value={`${rating.wins}-${rating.losses}`} />
         </div>
 
-        <div className="mt-8">
-          <p className="mb-3 text-sm font-medium text-muted-foreground">
+        <div className="mt-6">
+          <p className="mb-2 text-xs font-medium uppercase text-muted-foreground">
             Rankings
           </p>
           <div className="flex flex-wrap gap-2">
@@ -305,8 +286,6 @@ function UniversityChoice({
             Also listed as {university.aliases.join(", ")}
           </p>
         ) : null}
-
-        <div className="mt-auto pt-8" />
       </div>
     </button>
   );
@@ -314,31 +293,9 @@ function UniversityChoice({
 
 function DetailRow({ label, value }: { label: string; value: number | string }) {
   return (
-    <div className="flex items-center justify-between rounded-md bg-muted px-3 py-2 text-sm">
-      <span className="text-muted-foreground">{label}</span>
-      <span className="font-medium">{value}</span>
-    </div>
-  );
-}
-
-function SourceSummary() {
-  return (
-    <div className="grid gap-2 text-sm">
-      {(Object.entries(rankingsMetadata.sources) as [
-        RankingSource,
-        { edition: string; records: number; sourceUrl: string },
-      ][]).map(([source, info]) => (
-        <a
-          className="flex items-center justify-between gap-3 rounded-md px-2 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground"
-          href={info.sourceUrl}
-          key={source}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <span className="truncate">{SOURCE_LABELS[source]}</span>
-          <span className="tabular-nums">{info.records}</span>
-        </a>
-      ))}
+    <div className="rounded-md bg-muted px-3 py-2">
+      <span className="block text-xs text-muted-foreground">{label}</span>
+      <span className="mt-1 block text-sm font-semibold">{value}</span>
     </div>
   );
 }

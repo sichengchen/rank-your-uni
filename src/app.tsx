@@ -84,8 +84,8 @@ export function App() {
   return (
     <TooltipProvider>
       <main className="min-h-screen bg-background text-foreground">
-        <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8">
-          <section className="flex flex-col gap-5">
+        <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-5 px-4 py-5 sm:px-6 lg:h-screen lg:min-h-0 lg:overflow-hidden lg:px-8">
+          <section className="flex flex-col gap-5 lg:shrink-0">
             <header className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_20rem] sm:items-end">
               <div className="min-w-0 space-y-2">
                 <h1 className="max-w-2xl text-3xl font-semibold leading-tight tracking-normal sm:text-4xl">
@@ -174,8 +174,8 @@ export function App() {
             )}
           </section>
 
-          <aside>
-            <Card className="h-[min(520px,calc(100vh-2.5rem))]">
+          <aside className="lg:min-h-0 lg:flex-1 lg:basis-0 lg:overflow-hidden">
+            <Card className="h-[min(520px,calc(100vh-2.5rem))] lg:h-full lg:min-h-0">
               <CardHeader className="border-b">
                 <div className="flex items-start justify-between gap-3">
                   <div>

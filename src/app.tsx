@@ -30,6 +30,7 @@ import {
   getConfidence,
   getOrderedUniversities,
   getSuggestedPair,
+  rankingsMetadata,
   undoComparison,
   type ComparisonResult,
   type RankingSource,
@@ -218,6 +219,36 @@ export function App() {
               </CardContent>
             </Card>
           </aside>
+
+          <footer className="flex shrink-0 flex-col gap-1 border-t py-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <a
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+              href="https://github.com/sichengchen/rank-your-uni"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Visit on GitHub
+            </a>
+            <span>
+              Based on the rankings from{" "}
+              {(Object.entries(rankingsMetadata.sources) as [
+                RankingSource,
+                { sourceUrl: string },
+              ][]).map(([source, info], index, sources) => (
+                <span key={source}>
+                  <a
+                    className="text-foreground underline-offset-4 hover:underline"
+                    href={info.sourceUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {SOURCE_LABELS[source]}
+                  </a>
+                  {index < sources.length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </span>
+          </footer>
         </div>
       </main>
     </TooltipProvider>
